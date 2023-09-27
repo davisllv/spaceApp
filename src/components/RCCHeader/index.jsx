@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import RCCInput from "../RCCInput";
 
 const RCCHeaderStyled = styled.header`
   padding: 60px 0;
@@ -13,7 +14,8 @@ const RCCHeaderStyled = styled.header`
 const RCCHeader = () => {
   return (
     <RCCHeaderStyled>
-      <img src="/imagens/logo.png" alt="Qualquer Ccoisa" />
+      <img src="/imagens/logo.png" alt="space app logo" />
+      <RCCInput />
     </RCCHeaderStyled>
   );
 };
