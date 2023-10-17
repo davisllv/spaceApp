@@ -3,7 +3,8 @@ import EstilosGlobais from "./components/EstilosGlobais";
 import RCCHeader from "./components/RCCHeader";
 import RCCAside from "./components/RCCAside";
 import RCCBanner from "./components/RCCBanner";
-import FotoBanner from "./images/FotoBanner.png"
+import FotoBanner from "./images/FotoBanner.png";
+import RCCGalery from "./components/RCCGalery";
 
 const FundoGradient = styled.div`
   background: linear-gradient(
@@ -15,20 +16,43 @@ const FundoGradient = styled.div`
   width: 100%;
   min-height: 100vh;
 `;
+
+const AppContainer = styled.div`
+  width: 1440px;
+  max-width: 100%;
+  margin: 0 auto;
+`;
+
+const MainContent = styled.main`
+  display: flex;
+  gap: 24px;
+`;
+
+const GaleryContent = styled.section`
+  display: "flex";
+  flex-grow: 1;
+  flex-direction: column;
+`;
+
 function App() {
   return (
     <FundoGradient>
       <EstilosGlobais />
+      <AppContainer>
+        <RCCHeader />
 
-      <RCCHeader />
+        <MainContent>
+          <RCCAside />
+          <GaleryContent>
+            <RCCBanner
+              backgroundImage={FotoBanner}
+              texto={"A galeria mais completa de fotos do espaço!"}
+            />
 
-
-    <div style={{display: "flex", flexDirection: "row", width: "100%"}}>
-    <RCCAside />
-
-    <RCCBanner backgroundImage={FotoBanner} texto={"A galeria mais completa de fotos do espaço!"}/>
-    </div>
-
+            <RCCGalery />
+          </GaleryContent>
+        </MainContent>
+      </AppContainer>
     </FundoGradient>
   );
 }
