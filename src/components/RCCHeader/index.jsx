@@ -5,7 +5,7 @@ const RCCHeaderStyled = styled.header`
   padding: 60px 0;
   display: flex;
   justify-content: space-between;
-
+  margin: 0 24px;
   img {
     max-width: 212px;
   }
