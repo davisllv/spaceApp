@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
+import tags from "./tags.json"
 
 const TextContainer = styled.div`
   display: flex;
-  margin: 0 24px;
+  margin: 56px  24px 0 24px;
   gap: 17px;
 `;
 
 const TagText = styled.p`
   font-size: 24px;
   font-weight: 400;
-  width: 219px;
   color: #d9d9d9;
 `;
 
@@ -23,30 +23,24 @@ const TagsItensContainer = styled.div`
 const TagItem = styled.div`
   border-radius: 10px;
   background-color: #7b78e5;
+  text-align: center;
+  justify-content: center;
+  padding: 4px 10px;
 `;
-
-const tagsItens = [
-  {
-    id: 1,
-    description: "Estrelas",
-  },
-  { id: 2, description: "Galáxias" },
-  { id: 3, description: "Lua" },
-  { id: 4, description: "Planetas" },
-  { id: 5, description: "Buracos Negros" },
-  { id: 6, description: "Todas" },
-];
 
 const RCCTags = () => {
   return (
     <TextContainer>
+      <div style={{width: "219px"}}>
       <TagText>Busque por Tags:</TagText>
 
+      </div>
+
       <TagsItensContainer>
-        {tagsItens.map((tag) => {
+        {tags.map((tag) => {
           return (
             <TagItem>
-              <TagText>{tag.description}</TagText>
+              <TagText>{tag.titulo}</TagText>
             </TagItem>
           );
         })}
