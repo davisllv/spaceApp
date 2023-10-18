@@ -22,7 +22,7 @@ const TagsItensContainer = styled.div`
 
 const TagItem = styled.div`
   border-radius: 10px;
-  background-color: #7b78e5;
+  background-color: red;
   text-align: center;
   justify-content: center;
   padding: 4px 10px;
