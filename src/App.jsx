@@ -6,7 +6,7 @@ import RCCBanner from "./components/RCCBanner";
 import FotoBanner from "./images/FotoBanner.png";
 import RCCGalery from "./components/RCCGalery";
 import { useState } from "react";
-import fotosDaGaleria from "./fotos.json";
+// import fotosDaGaleria from "./fotos.json";
 
 const FundoGradient = styled.div`
   background: linear-gradient(
@@ -37,8 +37,8 @@ const GaleryContent = styled.section`
 `;
 
 const App = () => {
-  console.log(fotosDaGaleria());
-  const [fotosGaleria, setFotosGaleria] = useState(fotosDaGaleria);
+  // console.log(fotosDaGaleria());
+  // const [fotosGaleria, setFotosGaleria] = useState(fotosDaGaleria);
   return (
     <FundoGradient>
       <EstilosGlobais />
@@ -53,7 +53,7 @@ const App = () => {
               texto={"A galeria mais completa de fotos do espaço!"}
             />
 
-            <RCCGalery fotos={fotosGaleria} />
+            <RCCGalery />
           </GaleryContent>
         </MainContent>
       </AppContainer>

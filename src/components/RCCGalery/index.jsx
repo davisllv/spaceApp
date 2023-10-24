@@ -18,7 +18,7 @@ const RCCGalery = ({ fotosGaleria }) => {
       <GaleryContainer>
         <GaleryTitle>
           <RCCTitle>Navegue pela Galeria</RCCTitle>
-          {fotosGaleria.map((foto) => foto.titulo)}
+          {/* {fotosGaleria.map((foto) => foto.titulo)} */}
         </GaleryTitle>
 
         <RCCTitle $align="center">Populares</RCCTitle>

@@ -12,7 +12,6 @@ const TextContainer = styled.div`
 
 const TagText = styled.p`
   font-weight: 400;
-  margin: 0;
   color: #d9d9d9;
 `;
 
@@ -28,6 +27,8 @@ const TagItem = styled.div`
   max-height: 48px;
   cursor: pointer;
   background-color: rgba(217, 217, 217, 0.3);
+  text-align: center;
+  justify-content: center;
 `;
 
 const RCCTags = () => {
