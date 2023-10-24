@@ -5,7 +5,8 @@ import RCCAside from "./components/RCCAside";
 import RCCBanner from "./components/RCCBanner";
 import FotoBanner from "./images/FotoBanner.png";
 import RCCGalery from "./components/RCCGalery";
-import RCCTags from "./components/RCCTags";
+import { useState } from "react";
+import fotosDaGaleria from "./fotos.json";
 
 const FundoGradient = styled.div`
   background: linear-gradient(
@@ -35,7 +36,9 @@ const GaleryContent = styled.section`
   flex-direction: column;
 `;
 
-function App() {
+const App = () => {
+  console.log(fotosDaGaleria());
+  const [fotosGaleria, setFotosGaleria] = useState(fotosDaGaleria);
   return (
     <FundoGradient>
       <EstilosGlobais />
@@ -50,14 +53,12 @@ function App() {
               texto={"A galeria mais completa de fotos do espaço!"}
             />
 
-            <RCCTags />
-
-            <RCCGalery />
+            <RCCGalery fotos={fotosGaleria} />
           </GaleryContent>
         </MainContent>
       </AppContainer>
     </FundoGradient>
   );
-}
+};
 
 export default App;
