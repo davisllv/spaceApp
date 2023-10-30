@@ -2,6 +2,7 @@ import React from "react";
 import RCCTitle from "../RCCTitle";
 import styled from "styled-components";
 import RCCTags from "../RCCTags";
+import RCCImage from "./RCCImage";
 
 const GaleryContainer = styled.div`
   display: flex;
@@ -18,7 +19,8 @@ const RCCGalery = ({ fotosGaleria }) => {
       <GaleryContainer>
         <GaleryTitle>
           <RCCTitle>Navegue pela Galeria</RCCTitle>
-          {/* {fotosGaleria.map((foto) => foto.titulo)} */}
+          {fotosGaleria.map((foto) => <RCCImage foto={foto}/>)}
+          
         </GaleryTitle>
 
         <RCCTitle $align="center">Populares</RCCTitle>

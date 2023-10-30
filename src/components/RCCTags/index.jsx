@@ -22,13 +22,18 @@ const TagsItensContainer = styled.div`
 `;
 
 const TagItem = styled.div`
-  border-radius: 10px;
-  padding: 10px 8px;
-  max-height: 48px;
-  cursor: pointer;
-  background-color: rgba(217, 217, 217, 0.3);
-  text-align: center;
-  justify-content: center;
+    font-size: 16px;
+    color: #FFFFFF;
+    background: rgba(217, 217, 217, 0.3);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    &:hover {
+      border-color: #C98CF1;
+    }
 `;
 
 const RCCTags = () => {
@@ -45,7 +50,7 @@ const RCCTags = () => {
           })
           .map((tag) => {
             return (
-              <TagItem>
+              <TagItem key={tag.id}>
                 <TagText>{tag.titulo}</TagText>
               </TagItem>
             );
