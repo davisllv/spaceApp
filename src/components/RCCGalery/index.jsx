@@ -6,10 +6,19 @@ import RCCImage from "./RCCImage";
 
 const GaleryContainer = styled.div`
   display: flex;
+  width: 100%;
   margin: 0 24px;
 `;
 const GaleryTitle = styled.div`
+  width: 75%;
   flex-grow: 1;
+  flex-direction: row;
+`;
+
+const GaleryPictures = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 `;
 
 const RCCGalery = ({ fotosGaleria }) => {
@@ -19,11 +28,16 @@ const RCCGalery = ({ fotosGaleria }) => {
       <GaleryContainer>
         <GaleryTitle>
           <RCCTitle>Navegue pela Galeria</RCCTitle>
-          {fotosGaleria.map((foto) => <RCCImage foto={foto}/>)}
-          
+          <GaleryPictures>
+            {fotosGaleria.map((foto) => (
+              <RCCImage foto={foto} />
+            ))}
+          </GaleryPictures>
         </GaleryTitle>
 
-        <RCCTitle $align="center">Populares</RCCTitle>
+        <RCCTitle $align="center" style={{ width: "25%" }}>
+          Populares
+        </RCCTitle>
       </GaleryContainer>
     </>
   );
