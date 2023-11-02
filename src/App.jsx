@@ -7,6 +7,7 @@ import FotoBanner from "./images/FotoBanner.png";
 import RCCGalery from "./components/RCCGalery";
 import FotosGaleria from './fotos.json'
 import { useState } from "react";
+import RCCModal from "./components/RCCModal";
 
 const FundoGradient = styled.div`
   background: linear-gradient(
@@ -37,7 +38,9 @@ const GaleryContent = styled.section`
 `;
 
 const App = () => {
-  const [fotosGaleria, setFotosGaleria] = useState(FotosGaleria);
+  const [fotosGaleria] = useState(FotosGaleria);
+  const [fotoSelecionada, setFotoSelecionada] = useState(undefined)
+  const [openModalExpanded, setOpenModalExpanded] = useState(false)
   return (
     <FundoGradient>
       <EstilosGlobais />
@@ -52,10 +55,12 @@ const App = () => {
               texto={"A galeria mais completa de fotos do espaço!"}
             />
 
-            <RCCGalery fotosGaleria={fotosGaleria}/>
+            <RCCGalery fotosGaleria={fotosGaleria} onClickOpenModalExpanded={(openModal, picture) =>{setOpenModalExpanded(openModal); setFotoSelecionada(picture)}}/>
           </GaleryContent>
         </MainContent>
       </AppContainer>
+
+      <RCCModal openModal={openModalExpanded} closeModal={setOpenModalExpanded} fotoSelecionada={fotoSelecionada}/>
     </FundoGradient>
   );
 };

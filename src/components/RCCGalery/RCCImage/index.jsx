@@ -1,6 +1,8 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 const FigureContainer = styled.figure`
+  position: relative;
   width: 49%;
   margin: 0;
 `;
@@ -12,7 +14,22 @@ const ImageContainer = styled.img`
 
 const ButtonsContainer = styled.div`
   display: flex;
-  gap: 24px;
+  gap: 12px;
+  
+  button {
+    display: flex;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    cursor: pointer;
+    
+  }
+
+    button:hover {
+    img {
+      transform: scale(1.2);
+    }
+  }
 `;
 
 const FotterBottom = styled.footer`
@@ -20,10 +37,12 @@ const FotterBottom = styled.footer`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-left: 1rem;
 `;
 
-const RCCImage = ({ foto }) => {
-  console.log("FOTO", foto);
+const RCCImage = ({ foto, onClickOpenModalExpanded, isModalExpanded}) => {
+  const [favorite, setFavorite] = useState(false)
+  console.log(foto)
   return (
     <FigureContainer>
       <ImageContainer src={foto.path} alt={foto.titulo} />
@@ -39,11 +58,11 @@ const RCCImage = ({ foto }) => {
       >
         <h3 style={{ margin: 0 }}>{foto.titulo}</h3>
         <FotterBottom>
-          <p>{foto.path}</p>
+          <h4>{foto.fonte}</h4>
 
-          <ButtonsContainer>
-            <button>Fav</button>
-            <button>Expand</button>
+          <ButtonsContainer >
+            <button onClick={() => setFavorite(prevState => !prevState)}><img src={favorite ? "../icones/favorito-ativo.png": "../icones/favorito.png"} alt="Favorito" /></button>
+            {!isModalExpanded && <button onClick={() => onClickOpenModalExpanded(true, foto)}><img src="../icones/expandir.png" alt="" /></button>}
           </ButtonsContainer>
         </FotterBottom>
       </figcaption>

@@ -21,7 +21,7 @@ const GaleryPictures = styled.div`
   gap: 12px;
 `;
 
-const RCCGalery = ({ fotosGaleria }) => {
+const RCCGalery = ({ fotosGaleria, onClickOpenModalExpanded }) => {
   return (
     <>
       <RCCTags />
@@ -30,7 +30,7 @@ const RCCGalery = ({ fotosGaleria }) => {
           <RCCTitle>Navegue pela Galeria</RCCTitle>
           <GaleryPictures>
             {fotosGaleria.map((foto) => (
-              <RCCImage foto={foto} />
+              <RCCImage foto={foto} onClickOpenModalExpanded={onClickOpenModalExpanded}/>
             ))}
           </GaleryPictures>
         </GaleryTitle>
